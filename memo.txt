@@ -1,0 +1,52 @@
+<?php if (have_posts()) :
+          while (have_posts()) :
+          the_post();
+        ?>
+          <li>
+            <a href="<?php the_permalink(); ?>">
+              <p class="blog-txt"><?php the_time();?><span><?php the_title();?></span></p>
+              <div class="blog-img">
+                <?php the_post_thumbnail();?>
+              </div>
+            </a>
+          </li>
+          <?php endwhile; endif; ?>
+
+<!-- 投稿アーカイブページの作成 -->
+<?php function post_has_archive( $args, $post_type ) {
+
+	if ( 'post' == $post_type ) {
+		$args['rewrite'] = true;
+		$args['has_archive'] = 'blog'; //任意のスラッグ名
+	}
+	return $args;
+
+}
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+?>
+
+<!-- <ul> 
+        <li><a href="">home</a></li>
+        <li><a href="html/photo.html">photo</a></li>
+        <li><a href="html/contact.html">contact</a></li>
+        <li><a href="html/blog.html">blog</a></li>
+      </ul> -->
+
+<!-- サムネイルの表示 -->
+<?php function theme_setup() {
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'theme_setup');?>
+
+<? add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'news',
+    array(
+      'label' => 'お知らせ',
+      'public' => true,
+      'has_archive' => true,
+      'menu_position' => 5,
+      'supports' => array('title', 'editor', 'thumbnail') //デフォルトだと'title', 'editor'になる
+    )
+  );
+} ?>

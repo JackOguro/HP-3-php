@@ -1,0 +1,80 @@
+.home-btn {
+  width: 288px;
+  border: 1px solid $white;
+  border-radius: 31px;
+  text-align: center;
+  line-height: 3;
+  margin: auto;
+  position: relative;
+  top: 30%;
+  display: block;
+
+  &:hover {
+    border: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    display: block;
+    transition: .2s;
+    border-radius: 31px;
+    }
+  
+  &:hover:before {
+    background: linear-gradient(90deg, $home-btn-color-left 0%, $home-btn-color-center 50%, $home-btn-color-right 100%);
+    border: none;
+    width: 100%;
+  }
+
+  a {
+    color: $white;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+.contact-btn {
+  display: block;
+  color: $white;
+  background-color: $black;
+  cursor: pointer;
+  margin: auto;
+  width: 192px;
+  line-height: 2em;
+  font-size: 1em;
+  font-family: 'Noto Serif JP', serif;
+  transition: 0.5s;
+  border: none;
+
+  &:hover {
+    background-color: $white;
+    color: $black;
+    border: 1px solid $black;
+  }
+}
+
+// レスポンシブ対応（1024px）
+@media screen and (max-width: 1024px) {
+.home-btn {
+  top: 45%;
+}
+}
+
+// レスポンシブ対応（480px）
+@media screen and (max-width: 480px) {
+.home-btn {
+  top: 50%;
+  width: 160px;
+}
+
+.contact-btn {
+  width: 100px;
+  line-height: 1.5em;
+  margin-top: 10%;
+}
+}

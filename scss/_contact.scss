@@ -1,0 +1,170 @@
+.contact {
+  background: linear-gradient(45deg, $white 0%, $contact-25 25%, $contact-75 75%, $contact-100 100%);
+  padding: 10% 0;
+  height: 120vh;
+
+  &-wrapper {
+    background-color: $white;
+    width: 60%;
+    margin: 0 auto;
+    padding: 5% 0;
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      padding-bottom: 2.5%;
+    }
+  }
+
+  &_form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &_box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7.5%;
+
+    &_area {
+      display: flex;
+      margin-bottom: 7.5%;
+    }
+  }
+
+  &_form_box {
+    height: 2em;
+    padding-left: 5px;
+    width: 80%;
+    font-size: 1em;
+    background-color: $contact-form-box;
+    border: 1px solid $black;
+  }
+
+  &_txtarea {
+    width: 80%;
+    height: 10em;
+    font-size: 1em;
+    padding: 5px;
+    background-color: $contact-form-box;
+    margin-bottom: 2.5%;
+  }
+
+  &_form_ttl {
+    width: 30%;
+    font-size: 1em;
+    margin-left: 5%;
+  }
+}
+
+.copyright-contact {
+  color: $white;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 590px;
+    width: 30px;
+    height: 30px;
+    background-color: $footer-page-before;
+    border-radius: 50%;
+    }
+
+  &::after {
+    content: "0";
+    font-size: 14px;
+    position: absolute;
+    left: 602px;
+    bottom: 15px;
+  }
+}
+
+// レスポンシブ対応（1024px）
+@media screen and (max-width: 1024px) {
+.copyright-contact {
+  &:before {
+    left: 460px;
+  }
+
+  &:after {
+    left: 472px
+  }
+}
+
+.contact {
+  height: 90vh;
+}
+
+}
+
+// レスポンシブ対応（768px）
+@media screen and (max-width: 768px) {
+.copyright-contact {
+  &:before {
+    left: 410px;
+  }
+
+  &:after {
+    left: 421px
+  }
+}
+}
+
+
+// レスポンシブ対応（480px）
+@media screen and (max-width: 480px) {
+.contact {
+  padding: 20% 0;
+  height: 82vh;
+
+  &-wrapper {
+    h1 {
+    font-size: 24px;
+    padding-bottom: 10%;
+    }
+  }
+
+  &_form {
+    width: 80%;
+  }
+
+  &_box,
+  &_box_area {
+    display: unset;
+    position: relative;
+    right: 5px;
+  }
+
+  &_form_box {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  &_form_ttl {
+    display: block;
+    margin-bottom: -7.5%;
+    margin-left: unset;
+    width: 40%;
+  }
+
+  &_txtarea {
+    width: 100%;
+  }
+}
+
+.copyright-contact {
+  &:before {
+    left: 210px;
+  }
+
+  &:after {
+    left: 221px
+  }
+}
+}

@@ -1,0 +1,91 @@
+.blog-tetail-wrapper {
+  width: 60%;
+  margin: 0 auto;
+
+  img {
+    margin-top: 7.5%;
+    width: 100%;
+    height: 100%;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 2.5% 0;
+
+    span {
+      display: block;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+
+
+    li {
+      width: 20%;
+      text-align: center;
+
+      &:nth-child(2) {
+        font-size: 18px;
+      }
+
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+.copyright-blog-detail {
+  text-align: center;
+  margin-top: 15%;
+  padding-bottom: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: $footer-page-before;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "0";
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    right: 31px;
+    bottom: 10px;
+    color: $white;
+  }
+}
+
+// レスポンシブ対応（480px）
+@media screen and (max-width: 480px) {
+  .blog-tetail-wrapper {
+    width: 70%;
+
+    img {
+      margin-top: 15%;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 5% 0;
+    }
+
+    ul {
+      li {
+        width: 30%;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,284 @@
+#load-animation {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+#load-animation .season-ttl-index {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.slick-track {
+  height: 100vh;
+}
+
+.slideShowIndex img {
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 3s ease-out;
+  transition: 3s ease-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slideShowIndex .slick-next {
+  right: unset;
+}
+
+.slideShowIndex .slick-next:before {
+  content: unset;
+}
+
+.slideShowIndex .slick-active img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.four-seasons {
+  background: url(../img/winter/fuyu.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.season-desc-index {
+  background: url(../img/spring/sakura.jpg) no-repeat center;
+}
+
+.spring-index {
+  background: url(../img/spring/haru.jpg) no-repeat center;
+}
+
+.summer-index {
+  background: url(../img/summer/summer.jpg) no-repeat center;
+}
+
+.autumn-index {
+  background: url(../img/autumn/fall.jpg) no-repeat center;
+}
+
+.season-ttl-index {
+  position: relative;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 100px;
+  letter-spacing: 3px;
+}
+
+.season-ttl-index span {
+  display: block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  position: relative;
+  top: -25px;
+}
+
+.top h1 {
+  z-index: 10;
+}
+
+.season-txt-background {
+  width: 15%;
+  background-color: #fff;
+  opacity: 0.7;
+  padding: 2.5%;
+  position: relative;
+  top: 20%;
+  left: 5%;
+}
+
+.season-txt-background p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.season-txt-ttl {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.season-txt-ttl h1 {
+  margin: 15% 0;
+  font-size: 14px;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.season-txt-ttl h1 span {
+  position: unset;
+  font-size: 16px;
+  display: block;
+}
+
+.fadeIn {
+  -webkit-animation: fadeInAnime 1s forwards;
+          animation: fadeInAnime 1s forwards;
+  opacity: 0;
+}
+
+.fadeInTrigger {
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.world-season {
+  margin-bottom: 20%;
+}
+
+.copyright-index {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1024px) {
+  .season-txt-background {
+    width: 20%;
+  }
+  #load-animation .season-ttl-index {
+    font-size: 75px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .season-txt-background {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .season-ttl-index {
+    top: 45%;
+    font-size: 40px;
+  }
+  .season-ttl-index span {
+    font-size: 24px;
+    top: -15px;
+  }
+  .season-txt-background {
+    width: 45%;
+    top: 50%;
+    padding: 10%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    margin: auto;
+    left: unset;
+  }
+  #load-animation .season-ttl-index {
+    font-size: 32px;
+  }
+  #load-animation .season-ttl-index span {
+    top: -10px;
+  }
+}
+
+.home-btn {
+  width: 288px;
+  border: 1px solid #fff;
+  border-radius: 31px;
+  text-align: center;
+  line-height: 3;
+  margin: auto;
+  position: relative;
+  top: 30%;
+  display: block;
+}
+
+.home-btn:hover {
+  border: none;
+}
+
+.home-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  display: block;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border-radius: 31px;
+}
+
+.home-btn:hover:before {
+  background: -webkit-gradient(linear, left top, right top, from(#4f5ca5), color-stop(50%, #386e99), to(#217c8b));
+  background: linear-gradient(90deg, #4f5ca5 0%, #386e99 50%, #217c8b 100%);
+  border: none;
+  width: 100%;
+}
+
+.home-btn a {
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.contact-btn {
+  display: block;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+  margin: auto;
+  width: 192px;
+  line-height: 2em;
+  font-size: 1em;
+  font-family: 'Noto Serif JP', serif;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: none;
+}
+
+.contact-btn:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 1024px) {
+  .home-btn {
+    top: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-btn {
+    top: 50%;
+    width: 160px;
+  }
+  .contact-btn {
+    width: 100px;
+    line-height: 1.5em;
+    margin-top: 10%;
+  }
+}

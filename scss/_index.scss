@@ -1,0 +1,209 @@
+// ローディングアニメーション
+#load-animation {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+
+  & .season-ttl-index {
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    transform: translateX(-50%);
+
+  }
+}
+
+.slick-track {
+  height: 100vh;
+}
+
+.slideShowIndex {
+  img {
+    transform-origin: center top;
+    transform: scale(1.0);
+    transition: 3s ease-out;
+    width: 100%;
+    height: 100%;
+  }
+  
+  & .slick-next {
+    right: unset;
+
+    &:before {
+      content: unset;
+    }
+  }
+  
+  & .slick-active img {
+    transform: scale(1.1);
+  }
+}
+
+// ここからmainのコーディング
+.four-seasons {
+  background: url(../img/winter/fuyu.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.season-desc-index {
+  background: url(../img/spring/sakura.jpg) no-repeat center;
+}
+
+.spring-index {
+  background: url(../img/spring/haru.jpg) no-repeat center;
+}
+
+.summer-index {
+  background: url(../img/summer/summer.jpg) no-repeat center;
+}
+
+.autumn-index {
+  background: url(../img/autumn/fall.jpg) no-repeat center;
+}
+
+.season-ttl-index {
+  position: relative;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-size: 100px;
+  letter-spacing: 3px;
+  
+  span {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    position: relative;
+    top: -25px;
+  }
+}
+
+// ローディングアニメーション用
+.top h1 {
+  z-index: 10;
+}
+
+.season {
+  &-txt-background {
+    width: 15%;
+    background-color: $white;
+    opacity: 0.7;
+    padding: 2.5%;
+    position: relative;
+    top: 20%;
+    left: 5%;
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  &-txt-ttl {
+    text-align: center;
+    line-height: 1.2;
+    
+    h1 {
+      margin: 15% 0;
+      font-size: 14px;
+      color: $black;
+      letter-spacing: 0;
+
+      span {
+        position: unset;
+        font-size: 16px;
+        display: block;
+      }
+    }
+  }
+}
+
+// fadeInアニメーション
+.fadeIn {
+  animation: fadeInAnime 1s forwards;
+  opacity: 0;
+
+  &Trigger {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.8;
+  }
+}
+
+.world-season {
+  margin-bottom: 20%;
+}
+
+.copyright-index {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// レスポンシブ対応（1024px）
+@media screen and (max-width: 1024px) {
+.season-txt-background {
+  width: 20%;
+}
+
+#load-animation {
+  .season-ttl-index {
+    font-size: 75px;
+  }
+}
+
+}
+
+// レスポンシブ対応（768px）
+@media screen and (max-width: 768px) {
+.season-txt-background {
+  width: 25%;
+}
+}
+
+// レスポンシブ対応（480px）
+@media screen and (max-width: 480px) {
+.season-ttl-index {
+  top: 45%;
+  font-size: 40px;
+
+  span {
+    font-size: 24px;
+    top: -15px;
+  }
+}
+
+.season {
+  &-txt-background {
+    width: 45%;
+    top: 50%;
+    padding: 10%;
+    transform: translateY(-50%);
+    margin: auto;
+    left: unset;
+  }
+}
+
+#load-animation .season-ttl-index{
+  font-size: 32px;
+
+  span {
+    top: -10px;
+  }
+}
+
+}

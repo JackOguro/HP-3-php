@@ -1,0 +1,77 @@
+// 全体
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  color: $black;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-all;
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ヘッダー
+#header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+
+  nav {
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding: 1.5% 1%;
+
+      li {
+        margin: 0 1%;
+
+        a {
+          color: $black;
+
+          &:hover {
+            color: $slick-btn;
+          }
+        }
+      }
+    }
+  }
+}
+
+//コピーライト
+.copyright {
+  font-size: 10px;
+}
+
+// 筆記体
+h1 {
+  font-family: 'Parisienne', cursive;
+  font-weight: normal;
+}
+
+// レスポンシブ対応（480px）
+@media screen and (max-width: 480px) {
+#header {
+  nav {
+    ul {
+      padding: 2.5% 7.5%;
+
+      li {
+        margin: 0 2.5%;
+
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}  
+}

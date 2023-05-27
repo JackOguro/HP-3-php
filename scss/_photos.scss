@@ -1,0 +1,259 @@
+#main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.photo-ttl {
+  h1 {
+    text-align: center;
+    font-size: 100px;
+    margin-bottom: 10%;
+    position: relative;
+    top: 50px;
+  }
+}
+
+.season {
+  h1 {
+    font-size: 50px;
+    margin-bottom: 5%;
+  }
+}
+
+// セクションタイトルの色
+.spring-photo {
+  color: $spring;
+
+  .slick-dots {
+    li.slick-active button:before {
+      background-color: $spring;
+    }
+  }
+}
+
+.summer-photo {
+  color: $summer;
+
+  .slick-dots {
+    li.slick-active button:before {
+      background-color: $summer;
+    }
+  }
+}
+
+.autumn-photo {
+  color: $autumn;
+
+  .slick-dots {
+    li.slick-active button:before {
+      background-color: $autumn;
+    }
+  }
+}
+
+.winter-photo {
+  color: $winter;
+
+  .slick-dots {
+    li.slick-active button:before {
+      background-color: $winter;
+    }
+  }
+}
+
+.photo {
+  &-all {
+    ul {
+      li {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-txt-block {
+    box-shadow: 5px 5px 10px $photo-txt-box-shadow;
+    padding: 5% 2.5%;
+    color: $black;
+  }
+
+  &-ttl {
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+
+  &-img {
+    height: 12vw;
+  }
+}
+
+.photo-all {
+  & .slideShow {
+    position: relative;
+    z-index: 1;
+  }
+  
+  & .slick {
+    &-list {
+      height: 20vw;
+    }
+  
+    &_prev,
+    &_next {
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid $slick;
+      border-right: 2px solid $slick;
+      cursor: pointer;
+      position: absolute;
+      top: 35%;
+      z-index: 5;
+    }
+    
+    &_prev {
+      left: 0;
+      transform: rotate(-135deg);
+    }
+    
+    &_next {
+      right: 0;
+      transform: rotate(45deg);
+    }
+    
+    &-slide {
+      margin: 0 15px;
+    }
+    
+    &-dots {
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    
+      li {
+        margin: 0 1px;
+      }
+        
+      // dotsアイコンのカスタマイズ
+      & li button:before {
+        content:"";
+        width: 10px;
+        height: 8px;
+      background-color: $photo-txt-box-shadow;
+      opacity: 1;
+      border-radius: 50%;
+      }
+    }
+  }
+} 
+
+.copyright-photo {
+  text-align: center;
+  margin-top: 10%;
+  padding-bottom: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: $footer-page-before;
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "0";
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    right: 31px;
+    bottom: 20px;
+    color: $white;
+  }
+}
+
+// レスポンシブ対応（1024px）
+@media screen and (max-width: 1024px) {
+.photo {
+  &-all {
+    & .slick {
+      &-list {
+        height: 23vw;
+      }
+
+      &_prev {
+        left: -5px;
+        transform: rotate(-135deg);
+      }
+  
+      &_next {
+        right: -5px;
+        transform: rotate(45deg);
+      }
+
+      &_prev,
+      &_next {
+        top: 43%;
+      }
+    }
+  }
+
+  &-img {
+    height: 13vw;
+  }
+}
+}
+
+// レスポンシブ対応（768px）
+@media screen and (max-width: 768px) {
+.photo {
+  &-all {
+    & .slick {
+      &-list {
+        height: 31vw;
+      }
+    }
+  }
+
+  &-img {
+    height: 17vw;
+  }
+}
+
+}
+
+// レスポンシブ対応（480px）
+@media screen and (max-width: 480px) {
+.photo-ttl {
+  h1 {
+    margin-bottom: 40%;
+    top: 70px;
+  }
+}
+
+.season h1 {
+  margin-bottom: 10%;
+}
+
+.photo {
+  &-all {
+    & .slick {
+      &-list {
+        height: 63vw;
+      }
+    }
+  }  
+
+  &-img {
+    height: 35vw;
+  }
+}
+
+.copyright-photo {
+  margin-top: 20%;
+}
+
+}

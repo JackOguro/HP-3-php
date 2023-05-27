@@ -1,0 +1,154 @@
+#blog {
+  width: 80%;
+  margin: auto;
+}
+
+#blog h1 {
+  text-align: center;
+  font-size: 100px;
+  margin-bottom: 15%;
+  position: relative;
+  top: 50px;
+  font-weight: bold;
+}
+
+.blog-all ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 10%;
+  position: relative;
+}
+
+.blog-all ul li .blog-txt {
+  z-index: 1;
+  font-size: 55px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  text-shadow: 2.5px 2.5px 5px #fff;
+  color: #000;
+}
+
+.blog-all ul li .blog-txt span {
+  display: block;
+  font-size: 30px;
+}
+
+.blog-all ul li .blog-txt::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+
+.blog-all ul li .blog-txt:hover::after {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.blog-all ul li .blog-img {
+  width: 80%;
+  float: right;
+}
+
+.blog-all ul li .blog-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-all ul li .blog-img:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  background-color: #cdc9ca;
+  opacity: 0.5;
+}
+
+.blog-all ul li:last-child {
+  margin-bottom: 30%;
+}
+
+.blog-all ul li:nth-child(even) .blog-img {
+  float: left;
+}
+
+.blog-all ul li:nth-child(even) .blog-img:hover::before {
+  right: unset;
+  left: 0;
+}
+
+.blog-all ul li:nth-child(even) .blog-txt {
+  left: unset;
+  right: 0;
+  text-align: right;
+}
+
+.blog-all ul li:nth-child(even) .blog-txt::after {
+  left: 0;
+}
+
+.copyright-blog {
+  text-align: center;
+  margin-top: 10%;
+  padding-bottom: 5px;
+}
+
+.copyright-blog::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #691569;
+  border-radius: 50%;
+}
+
+.copyright-blog::after {
+  content: "0";
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  right: 31px;
+  bottom: 10px;
+  color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  #blog {
+    width: 60%;
+  }
+  #blog h1 {
+    font-size: 50px;
+    margin-bottom: 25%;
+  }
+  .blog-all ul li {
+    margin-bottom: 20%;
+  }
+  .blog-all ul li .blog-txt {
+    font-size: 16px;
+  }
+  .blog-all ul li .blog-txt span {
+    font-size: 10px;
+  }
+}
